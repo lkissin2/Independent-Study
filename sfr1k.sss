@@ -1,0 +1,335 @@
+set title "sfr1k simulation"
+
+include "geom.txt"
+
+%--------------------------------------------------------------------------------Material composition
+% --- Fuel in inner core bottom (composition in atom density) (atoms/barn-cm):
+mat infuelbot sum burn 1
+92234.09c   1.1369E-06  %U-234
+92235.09c   3.0421E-05  %U-235
+92236.09c   2.4896E-06  %U-236
+92238.09c	1.9613E-02  %U-238
+93237.09c	4.6686E-05  %Np-237
+94236.09c	4.9700E-10  %Pu-236
+94239.09c	1.1695E-04  %Pu-238
+94239.09c	2.2076E-03  %Pu-239
+94240.09c	1.3244E-03	%Pu-240
+94241.09c	1.9375E-04  %Pu-241
+94242.09c	2.9277E-04  %Pu-242
+95241.09c	1.0791E-04  %Am-241
+95342.09c   9.2989E-06  %Am-242m
+95243.09c	1.0017E-04  %Am-243
+96242.09c	5.6250E-06  %Cm-242
+96243.09c	5.4321E-07  %Cm-243
+96244.09c	6.7240E-05  %Cm-244
+96245.09c	1.7397E-05  %Cm-245
+96246.09c	9.2285E-06  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	9.2873E-04  %a-Mo fission psuedo product
+%not sure if proper library IDs
+%data from table 2.22
+% --- Fuel in inner core layer2 (composition in atom density) (atoms/barn-cm):
+mat infuel2 sum burn 1
+92234.09c   1.0856E-06  %U-234
+92235.09c   2.9338E-05  %U-235
+92236.09c   2.5117E-06  %U-236
+92238.09c	1.9474E-02  %U-238
+93237.09c	4.6926E-05  %Np-237
+94236.09c	5.5883E-10  %Pu-236
+94239.09c	1.1284E-04  %Pu-238
+94239.09c	2.1814E-03  %Pu-239
+94240.09c	1.2955E-03	%Pu-240
+94241.09c	1.8610E-04  %Pu-241
+94242.09c	2.8911E-04  %Pu-242
+95241.09c	1.0465E-04  %Am-241
+95342.09c   9.0848E-06  %Am-242m
+95243.09c	9.8324E-05  %Am-243
+96242.09c	5.8208E-06  %Cm-242
+96243.09c	5.0246E-07  %Cm-243
+96244.09c	6.5722E-05  %Cm-244
+96245.09c	1.6743E-05  %Cm-245
+96246.09c	9.1426E-06  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	1.1464E-03  %a-Mo fission psuedo product
+%not sure if proper library IDs
+%data from table 2.22
+
+% --- Fuel in inner core layer3 (composition in atom density) (atoms/barn-cm):
+mat infuel3 sum burn 1
+92234.09c   1.0727E-06  %U-234
+92235.09c   2.8961E-05  %U-235
+92236.09c   2.5536E-06  %U-236
+92238.09c	1.9433E-02  %U-238
+93237.09c	4.6782E-05  %Np-237
+94236.09c	5.6701E-10  %Pu-236
+94239.09c	1.1196E-04  %Pu-238
+94239.09c	2.1754E-03  %Pu-239
+94240.09c	1.2902E-03	%Pu-240
+94241.09c	1.8518E-04  %Pu-241
+94242.09c	2.8818E-04  %Pu-242
+95241.09c	1.0353E-04  %Am-241
+95342.09c   9.0224E-06  %Am-242m
+95243.09c	9.7993E-05  %Am-243
+96242.09c	5.9476E-06  %Cm-242
+96243.09c	5.0136E-07  %Cm-243
+96244.09c	6.5622E-05  %Cm-244
+96245.09c	1.6663E-05  %Cm-245
+96246.09c	9.1307E-06  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	1.2031E-03  %a-Mo fission psuedo product
+%not sure if proper library IDs
+%data from table 2.22
+
+% --- Fuel in inner core layer4 (composition in atom density) (atoms/barn-cm):
+mat infuel4 sum burn 1
+92234.09c   1.1028E-06  %U-234
+92235.09c   3.0070E-05  %U-235
+92236.09c   2.3779E-06  %U-236
+92238.09c	1.9550E-02  %U-238
+93237.09c	4.7603E-05  %Np-237
+94236.09c	5.5075E-10  %Pu-236
+94239.09c	1.1370E-04  %Pu-238
+94239.09c	2.1813E-03  %Pu-239
+94240.09c	1.2986E-03	%Pu-240
+94241.09c	1.8537E-04  %Pu-241
+94242.09c	2.9038E-04  %Pu-242
+95241.09c	1.0686E-04  %Am-241
+95342.09c   9.1756E-06  %Am-242m
+95243.09c	9.8630E-05  %Am-243
+96242.09c	5.4901E-06  %Cm-242
+96243.09c	4.8876E-07  %Cm-243
+96244.09c	6.5349E-05  %Cm-244
+96245.09c	1.6696E-05  %Cm-245
+96246.09c	9.1364E-06  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	1.0625E-03  %table reads a Mo, not sure what that means
+%not sure if proper library IDs
+%data from table 2.22
+
+% --- Fuel in inner core top (composition in atom density) (atoms/barn-cm):
+mat infueltop sum burn 1
+92234.09c   1.1759E-06  %U-234
+92235.09c   3.2571E-05  %U-235
+92236.09c   2.0226E-06  %U-236
+92238.09c	1.9801E-02  %U-238
+93237.09c	4.8895E-05  %Np-237
+94236.09c	4.8775E-10  %Pu-236
+94239.09c	1.1829E-04  %Pu-238
+94239.09c	2.2011E-03  %Pu-239
+94240.09c	1.3248E-03	%Pu-240
+94241.09c	1.8845E-04  %Pu-241
+94242.09c	2.9569E-04  %Pu-242
+95241.09c	1.1421E-04  %Am-241
+95342.09c   9.4890E-06  %Am-242m
+95243.09c	1.0032E-04  %Am-243
+96242.09c	4.5416E-06  %Cm-242
+96243.09c	4.8480E-07  %Cm-243
+96244.09c	6.5349E-05  %Cm-244
+96245.09c	1.7026E-05  %Cm-245
+96246.09c	9.1805E-06  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	7.4065E-04  %a Mo (pseudo fission product)
+%not sure if proper library IDs
+%data from table 2.22
+
+%Fuel in outer core bottom(composition in atom density) (atoms/barn-cm)
+mat outfuelbot sum burn 1
+92234.09c   1.6317E-06  %U-234
+92235.09c   3.0822E-05  %U-235
+92236.09c   1.7881E-06  %U-236
+92238.09c	1.8244E-02  %U-238
+93237.09c	9.8244E-05  %Np-237
+94236.09c	7.1175E-10  %Pu-236
+94239.09c	1.6436E-04  %Pu-238
+94239.09c	2.8147E-03  %Pu-239
+94240.09c	1.7467E-03	%Pu-240
+94241.09c	2.8976E-04  %Pu-241
+94242.09c	4.0754E-04  %Pu-242
+95241.09c	1.8607E-04  %Am-241
+95342.09c   1.2185E-05  %Am-242m
+95243.09c	1.3234E-04  %Am-243
+96242.09c	6.4688E-06  %Cm-242
+96243.09c	6.3471E-07  %Cm-243
+96244.09c	8.0107E-05  %Cm-244
+96245.09c	2.0200E-05  %Cm-245
+96246.09c	1.0443E-05  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	8.1524E-04  %a Mo (pseudo fission product)
+
+%Fuel in outer core layer2 (composition in atom density) (atoms/barn-cm)
+mat outfuel2 sum burn 1
+92234.09c   1.5766E-06  %U-234
+92235.09c   2.9870E-05  %U-235
+92236.09c   1.8534E-06  %U-236
+92238.09c	1.8144E-02  %U-238
+93237.09c	9.7300E-05  %Np-237
+94236.09c	8.2505E-10  %Pu-236
+94239.09c	1.6026E-04  %Pu-238
+94239.09c	2.7664E-03  %Pu-239
+94240.09c	1.7191E-03	%Pu-240
+94241.09c	2.8138E-04  %Pu-241
+94242.09c	4.0412E-04  %Pu-242
+95241.09c	1.8127E-04  %Am-241
+95342.09c   1.2045E-05  %Am-242m
+95243.09c	1.3019E-04  %Am-243
+96242.09c	6.8630E-06  %Cm-242
+96243.09c	6.0893E-07  %Cm-243
+96244.09c	7.8889E-05  %Cm-244
+96245.09c	1.9678E-05  %Cm-245
+96246.09c	1.0371E-05  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	1.0174E-03  %a Mo (pseudo fission product)
+
+%Fuel in outer core layer3 (composition in atom density) (atoms/barn-cm)
+mat outfuel3 sum burn 1
+92234.09c   1.5638E-06  %U-234
+92235.09c   2.9561E-05  %U-235
+92236.09c   1.8941E-06  %U-236
+92238.09c	1.8115E-02  %U-238
+93237.09c	9.6775E-05  %Np-237
+94236.09c	8.4282E-10  %Pu-236
+94239.09c	1.5949E-04  %Pu-238
+94239.09c	2.7538E-03  %Pu-239
+94240.09c	1.7135E-03	%Pu-240
+94241.09c	2.8012E-04  %Pu-241
+94242.09c	4.0321E-04  %Pu-242
+95241.09c	1.7970E-04  %Am-241
+95342.09c   1.2021E-05  %Am-242m
+95243.09c	1.2985E-04  %Am-243
+96242.09c	7.0553E-06  %Cm-242
+96243.09c	6.0901E-07  %Cm-243
+96244.09c	7.8847E-05  %Cm-244
+96245.09c	1.9613E-05  %Cm-245
+96246.09c	1.0361E-05  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	1.0697E-03  %a Mo (pseudo fission product)
+
+%Fuel in outer core layer4 (composition in atom density) (atoms/barn-cm)
+mat outfuel4 sum burn 1
+92234.09c   1.5894E-06  %U-234
+92235.09c   3.0391E-05  %U-235
+92236.09c   1.7528E-06  %U-236
+92238.09c	1.8191E-02  %U-238
+93237.09c	9.8481E-05  %Np-237
+94236.09c	8.0703E-10  %Pu-236
+94239.09c	1.6063E-04  %Pu-238
+94239.09c	2.7786E-03  %Pu-239
+94240.09c	1.7231E-03	%Pu-240
+94241.09c	2.8135E-04  %Pu-241
+94242.09c	4.0530E-04  %Pu-242
+95241.09c	1.8397E-04  %Am-241
+95342.09c   1.2039E-05  %Am-242m
+95243.09c	1.3036E-04  %Am-243
+96242.09c	6.4446E-06  %Cm-242
+96243.09c	5.9753E-07  %Cm-243
+96244.09c	7.8479E-05  %Cm-244
+96245.09c	1.9635E-05  %Cm-245
+96246.09c	1.0367E-05  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	9.4870E-04  %a Mo (pseudo fission product)
+
+%Fuel in outer core top (composition in atom density) (atoms/barn-cm)
+mat outfueltop sum burn 1
+92234.09c   1.6552E-06  %U-234
+92235.09c   3.2250E-05  %U-235
+92236.09c   1.4710E-06  %U-236
+92238.09c	1.8359E-02  %U-238
+93237.09c	1.0175E-04  %Np-237
+94236.09c	6.8053E-10  %Pu-236
+94239.09c	1.6416E-04  %Pu-238
+94239.09c	2.8416E-03  %Pu-239
+94240.09c	1.7508E-03	%Pu-240
+94241.09c	2.8697E-04  %Pu-241
+94242.09c	4.1028E-04  %Pu-242
+95241.09c	1.9339E-04  %Am-241
+95342.09c   1.2064E-05  %Am-242m
+95243.09c	1.3206E-04  %Am-243
+96242.09c	5.1976E-06  %Cm-242
+96243.09c	5.9372E-07  %Cm-243
+96244.09c	7.8359E-05  %Cm-244
+96245.09c	1.9913E-05  %Cm-245
+96246.09c	1.0410E-05  %Cm-246
+40000.09c	7.2802E-03  %Natural Zr
+42000.09c	6.6172E-04  %a Mo (pseudo fission product)
+
+% ---  Cladding HT9 steel (composition in atom density) (atoms/barn-cm)
+mat clad  sum
+26000.06c 6.9715E-02 %Fe
+28000.06c 4.2984E-04 %Ni
+24000.06c 1.0366E-02 %Cr
+25055.06c 4.5921E-04 %Mn-55
+42000.06c 4.9007E-04 %Mo
+
+% --- Coolant (composition in atom density) (atoms/barn-cm):
+mat cool sum 
+11023.06c 2.2272E-2 %Natural Sodium is 100% Na-23
+
+% --- Reflector HT9 steel (composition in atom density) (atoms/barn-cm)
+mat refl sum
+26000.06c 6.9715E-02 %Fe
+28000.06c 4.2984E-04 %Ni
+24000.06c 1.0366E-02 %Cr
+25055.06c 4.5921E-04 %Mn-55
+42000.06c 4.9007E-04 %Mo
+
+% --- Absorbant natural B4C (composition in atom density) (atoms/barn-cm)
+mat absonat sum 
+12000.06c 1.9657E-02 %C
+ 5010.06c 1.5018E-02 %B-10
+ 5011.06c 6.3609E-02 %B-11
+
+% --- Absorbant enriched B4C (composition in atom density) (atoms/barn-cm)
+mat abso sum
+12000.06c 2.0632E-02 %C
+ 5010.06c 5.3642E-02 %B-10
+ 5011.06c 2.8884E-02 %B-11
+
+
+
+%------------------------------------------------settings
+
+%----xs data path
+set SERPENT_DATA 1
+set acelib "/projects/arfc/serpent/core/xsdata/endfb7/sss_endfb7.xsdata"
+
+
+% --- Periodic boundary condition:
+set bc 1 %black boundary condition
+
+%----xs data path
+%set SERPENT_DATA 1
+%set acelib "/projects/arfc/serpent/core/xsdata/endfb7/sss_endfb7.xsdata"
+
+% --- Group constant generation:
+%universe = 0 (homogenization over all space)
+set gcu 0
+%2-group structure (group boundary at 0.625 eV)
+
+%set nfg 2 0.625E-6
+
+% --- Geometry and mesh plots:
+plot 3 6000 6000 0.0
+mesh 3 3000 3000
+plot 2 6000 6000 0.0
+mesh 2 3000 3000
+plot 1 6000 6000 0.0
+mesh 1 3000 3000
+
+% --- Depletion steps:
+% Cycle 1
+%power
+set power 1000E+6 %total power in watts
+
+% --- Neutron population and criticality cycles:
+set pop 100000  500  20
+
+% --- burnup parameters
+
+set declib "/projects/arfc/serpent/core/xsdata/endfb7/sss_endfb7.dec" % for RCaaS
+set nfylib "/projects/arfc/serpent/core/xsdata/endfb7/sss_endfb7.nfy" % for RCaaS
+
+set bumode  2  % CRAM method
+set pcc     0  % Predictor-corrector calculation off
+%set powdens 22.2E-3 % Power density for your assembly, kW/l
+dep daystep 365 % step for butnup calculation
+set printm 1         % Print all materials composition after depletion in a seperate file
